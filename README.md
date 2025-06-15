@@ -84,6 +84,6 @@ Este trabalho reforçou a importância de escolher algoritmos e heurísticas ade
 - Scripts de experimentação: `experimento_parte1.py` a `parte4.py`
 - Resultados: `resultados_parte1.csv`, `parte2.csv`, etc.
 - Código-fonte: `src/algoritmos.py`, `heuristicas.py`, `puzzle.py`
-- Repositório: [Link para seu GitHub](https://github.com/seuusuario/seurepositorio)
+- Repositório: https://github.com/avelinofaco/inteligencia-artificial-buscas-8puzzle.git
 
 ---
