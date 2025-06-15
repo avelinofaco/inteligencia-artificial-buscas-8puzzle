@@ -1,0 +1,60 @@
+Relatório Final – Trabalho AT1: Algoritmos de Busca no 8-Puzzle
+
+1. Introdução
+
+Este relatório apresenta o desenvolvimento e a análise de diferentes algoritmos de busca aplicados ao problema do 8-Puzzle, como parte do trabalho avaliativo AT1 da disciplina de Inteligência Artificial (UFC Quixadá, 2025.1). O objetivo é estudar o desempenho de algoritmos clássicos em diferentes configurações de função de custo e heurísticas.
+
+2. Objetivos
+
+- Implementar os algoritmos: Largura (A1), Profundidade (A2), Custo Uniforme (A3), Gulosa (A4) e A* (A5).
+- Aplicar diferentes funções de custo (C1 a C4) e heurísticas (H1 e H2).
+- Realizar experimentos para avaliar o desempenho, custo e eficiência dos algoritmos.
+- Documentar os resultados de forma clara, com base em dados reais coletados automaticamente.
+
+3. Implementação
+
+O sistema foi desenvolvido em Python 3, utilizando apenas bibliotecas padrão (como heapq, deque e csv). O projeto foi modularizado em arquivos para representar os estados, funções de custo, heurísticas e algoritmos. Cada algoritmo foi adaptado para aceitar diferentes funções e suportar randomização (Parte 4).
+
+4. Algoritmos de Busca
+
+- A1 – Busca em Largura: expande nós em ordem FIFO, garante caminho mais curto com C1.
+- A2 – Busca em Profundidade: expande os últimos sucessores, sensível à ordem.
+- A3 – Custo Uniforme: expande com base no custo acumulado real (Dijkstra).
+- A4 – Busca Gulosa: usa somente heurística (H1 ou H2), ignora custo real.
+- A5 – Busca A*: combina custo acumulado e heurística para escolha ótima.
+
+5. Heurísticas e Funções de Custo
+
+Heurísticas:
+- H1: Número de peças fora do lugar (×2)
+- H2: Soma das distâncias de Manhattan (×2)
+
+Funções de custo:
+- C1: Todas as ações = 2
+- C2: Verticais = 2, Horizontais = 3
+- C3: Verticais = 3, Horizontais = 2
+- C4: Igual à C2, mas ir para o centro = 5
+
+6. Metodologia Experimental
+
+Foram realizados experimentos divididos em 4 partes:
+- Parte 1: A1, A2, A3 com C1–C4, 30 estados aleatórios
+- Parte 2: A3 vs A* com C1–C4 e H1/H2
+- Parte 3: Gulosa vs A* com C1–C4 e H1/H2
+- Parte 4: Largura e Profundidade com ordem de vizinhança aleatória
+
+Cada execução registrou: custo total, nós visitados, gerados, e tamanho do caminho.
+
+7. Análise dos Resultados
+
+Os resultados indicam que o algoritmo A* apresentou melhor desempenho em termos de custo e eficiência, especialmente quando combinado com a heurística H2. A busca gulosa teve desempenho variável, sendo sensível à qualidade da heurística. A profundidade teve instabilidade devido à ordem dos sucessores.
+
+8. Considerações Finais
+
+O trabalho permitiu entender como diferentes algoritmos reagem a variações no custo e na heurística. A modularidade do código facilitou a realização automatizada de mais de 2.000 execuções. O uso de heurísticas admissíveis se mostrou fundamental para o bom desempenho do A*. A randomização reforça a importância da ordem de operadores em algoritmos não informados.
+
+9. Apêndice
+
+- Scripts de experimentação: `experimento/parte1.py` a `parte4.py`
+- Resultados em .csv organizados por parte
+- Repositório do projeto no GitHub:https://github.com/avelinofaco/inteligencia-artificial-buscas-8puzzle.git
